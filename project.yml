@@ -1,0 +1,25 @@
+name: Status
+settings: 
+  PRODUCT_BUNDLE_IDENTIFIER: run.nathan.$(PRODUCT_NAME)
+  DEVELOPMENT_TEAM: 294VZ3T33E
+options:
+  createIntermediateGroups: true
+
+targets:
+  Status:
+    type: application
+    platform: macOS
+    sources: Sources/Status
+    scheme:
+      testTargets:
+      - StatusTests
+
+  # Tests
+
+  StatusTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources: Tests/StatusTests
+    dependencies:
+    - target: Status
+  
